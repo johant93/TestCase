@@ -76,8 +76,7 @@ public:
     template <typename T, typename U, typename V>
     TestCase& check_function(T fun, const U& a, const V& b)
     {
-        int temp = fun(a);
-        if (b == temp)
+        if (fun(a) == b)
             numPassed++;
         else
         {
@@ -89,7 +88,7 @@ public:
                     << ": Function should return "
                     << b
                     << " but returned "
-                    << temp
+                    << fun(a)
                     << "!"
                     << endl;
         }
